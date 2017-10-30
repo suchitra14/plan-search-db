@@ -1,0 +1,25 @@
+<div class="row">
+<div ng-repeat="item in secondDirCtrl.items">
+{{item}}
+
+<input type="button" ng-click="secondDirCtrl.showMessage()" value="Show">
+{{secondDirCtrl.message}}
+</div>
+
+    <div  class="container">
+            <div class="text-center col-xs-10">
+                
+                <select ng-model="mapDirCtrl.selectedCityId" ng-options="c.id as c.label for c in mapDirCtrl.cities" ng-change="mapDirCtrl.showMap(mapDirCtrl.selectedCityId)"></select>
+                <br/>
+
+                <input places-auto-complete types="['geocode']" on-place-changed="mapDirCtrl.placeMarker()" />
+                <ng-map id="mapa" center="{{mapDirCtrl.center}}" zoom="{{mapDirCtrl.selectedCity.zoom}}" on-click="mapDirCtrl.getpos($event)" style='width: 300; margin: 15px;'>
+                    <marker position="{{mapDirCtrl.latlng}}" on-dragend="mapDirCtrl.getpos($event)" animation="Animation.BOUNCE" animation="DROP" draggable="true"></marker>
+                </ng-map>
+            	
+            	</div>
+            </div>
+</div>
+
+           
+

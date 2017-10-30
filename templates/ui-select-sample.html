@@ -1,0 +1,139 @@
+	<style type="text/css">
+
+		.logo{
+ 			 width : 100px;
+		     height: 100px;	
+		}
+
+		.banner{
+			width: 700px;
+			height: 700px;
+			display: block;
+			margin: auto;
+		}
+
+		table, th, td {
+	  		border: 1px solid grey;
+	  		border-collapse: collapse;
+	  		padding: 5px;
+		}	
+
+		.ui-selections, .row{
+			margin: 0 auto;
+		}
+
+		.main-table{
+			margin-top: 50px;
+		}
+
+
+		table tr:nth-child(4n+1) {
+		  	background-color: #f1f1f1;
+		}
+
+		table tr:nth-child(4n), table tr:nth-child(4n+2) {
+		  	background-color: #ffffff;
+		}
+
+		.separator{
+			  margin: 50px;
+			  border-left-color: white;
+			  border-right-color: white;
+		}
+
+	 </style>
+
+	<div class="ui-selections">
+		<div class="row">
+			<div class="col-md-4">
+			<ui-select ng-model="uiDirCtrl.selectedCity" on-select="uiDirCtrl.populateAreas(uiDirCtrl.selectedCity)">
+		     <ui-select-match>
+		     	<span ng-bind="$select.selected.name"></span>
+		     </ui-select-match>
+		     <ui-select-choices  repeat ="city in (uiDirCtrl.cities | filter: $select.search) track by city.id">
+		      <span ng-bind="city.name"></span>
+		    </ui-select-choices>
+         </ui-select>
+         </div>
+        
+         <div class="col-md-4">
+        	<ui-select ng-model="uiDirCtrl.selectedArea" on-select="uiDirCtrl.populateLocalities(uiDirCtrl.selectedCity.id, uiDirCtrl.selectedArea.id)">
+		     <ui-select-match>
+		     	<span ng-bind="$select.selected.name"></span>
+		     </ui-select-match>
+		     <ui-select-choices  repeat ="area in (uiDirCtrl.populatedAreas | filter: $select.search) track by area.id">
+		      <span ng-bind="area.name"></span>
+		    </ui-select-choices>
+         </ui-select>
+         </div>
+         
+         
+         <div class="col-md-4">
+         <ui-select ng-model="uiDirCtrl.selectedLocality" on-select="uiDirCtrl.populatePlans(uiDirCtrl.selectedCity, uiDirCtrl.selectedArea)"  >
+		     <ui-select-match>
+		     	<span ng-bind="$select.selected"></span>
+		     </ui-select-match>
+		     <ui-select-choices  repeat ="locality in (uiDirCtrl.populatedLocalities | filter: $select.search)">
+		      <span ng-bind="locality"></span>
+		    </ui-select-choices>
+         </ui-select>
+         </div>
+         
+        
+      </div>
+      	<div class="row" style="display: none">
+      	  <div class="col-md-4">
+	       	<span>Selected : {name : {{uiDirCtrl.selectedCity.name}}, id : {{uiDirCtrl.selectedCity.id}} }
+	       	</span>
+	       </div>
+	       <div class="col-md-4">
+	       	<span>Selected : {name : {{uiDirCtrl.selectedArea.name}}, id : {{uiDirCtrl.selectedArea.id}}}
+	       	</span>
+	       </div>
+	       <div class="col-md-4">
+	        <span>Selected : {name : {{uiDirCtrl.selectedLocality}}}</span>
+	        </span>
+	       </div>
+	    </div>
+	 </div>
+
+	 <div class="row main-table">
+	  <table ng-show="uiDirCtrl.populateIsps">
+	  	 <tr ng-repeat-start="isp in uiDirCtrl.isps">
+	  	 	<th>ISP</th>
+	  	 	<th>ISP Name</th>	  	 	
+	  	 	<th>Avg Rating</th>
+	  	 	<th>Max Speed</th>
+	  	 	<th>Starts from</th>
+	  	 	<th>Summary</th>
+	  	 	<th></th>
+	  	 </tr>
+	  	 <tr>
+	  	    <td><img ng-src="{{isp.url}}" class="logo"></td>
+	  	    <td>{{isp.name}}</td>
+	  	    <td> <span title="The average rating is: {{isp.avgRating}} stars" > 
+	  	    		<i ng-class="isp.oneStar" aria-hidden="true"></i>
+	  	    		<i ng-class="isp.twoStar" aria-hidden="true"></i>
+	  	    		<i ng-class="isp.threeStar" aria-hidden="true"></i>
+	  	    		<i ng-class="isp.fourStar" aria-hidden="true"></i>
+	  	    		<i ng-class="isp.fiveStar" aria-hidden="true"></i>	
+	  	     	</span>
+	  	    </td>
+	  	    <td>{{isp.maxSpeed}}</td>
+	  	    <td>{{isp.priceStarts}}</td>
+	  	    <td>{{isp.summary}}</td>
+	  	    <td><button class="btn" ng-click="uiDirCtrl.toggleBanner($index)"><i class="fa fa-caret-down fa-2x" aria-hidden="true"></i></button></td>
+	  	  </tr>
+	  	  <tr ng-show="uiDirCtrl.isBannerShow($index)">
+	  	  	<td colspan="7"> <img src="{{isp.banner}}" class="banner"> </td>
+	  	  </tr>
+	  	  <tr ng-repeat-end>
+	  	  	<td colspan="7" class="separator"><div class="separator"></div></td>	
+	  	  </tr>
+	  	</table>
+	  </div>  
+
+
+	 
+	
+  

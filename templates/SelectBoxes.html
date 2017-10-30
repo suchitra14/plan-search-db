@@ -1,0 +1,51 @@
+   <div ng-controller="uiController as uiCtrl">
+   <div class="row">
+            <div class="col-md-4">
+            <ui-select ng-model="uiCtrl.selectedCity" on-select="uiCtrl.populateAreas(uiCtrl.selectedCity)">
+             <ui-select-match>
+                <span ng-bind="$select.selected.name"></span>
+             </ui-select-match>
+             <ui-select-choices  repeat ="city in (uiCtrl.cities | filter: $select.search) track by city.id">
+              <span ng-bind="city.name"></span>
+            </ui-select-choices>
+             </ui-select>
+             </div>
+        
+         <div class="col-md-4">
+            <ui-select ng-model="uiCtrl.selectedArea" on-select="uiCtrl.populateLocalities(uiCtrl.selectedCity.id, uiCtrl.selectedArea.id)">
+             <ui-select-match>
+                <span ng-bind="$select.selected.name"></span>
+             </ui-select-match>
+             <ui-select-choices  repeat ="area in (uiCtrl.populatedAreas | filter: $select.search) track by area.id">
+              <span ng-bind="area.name"></span>
+            </ui-select-choices>
+         </ui-select>
+         </div>
+         
+         <div class="col-md-4">
+         <ui-select ng-model="uiCtrl.selectedLocality" on-select="uiCtrl.populatePlans(uiCtrl.selectedCity, uiCtrl.selectedArea)"  >
+             <ui-select-match>
+                <span ng-bind="$select.selected"></span>
+             </ui-select-match>
+             <ui-select-choices  repeat ="locality in (uiCtrl.populatedLocalities | filter: $select.search)">
+              <span ng-bind="locality"></span>
+            </ui-select-choices>
+         </ui-select>
+         </div>
+        
+      </div>
+        <div class="row">
+          <div class="col-md-4">
+            <span>Selected : {name : {{uiCtrl.selectedCity.name}}, id : {{uiCtrl.selectedCity.id}} }
+            </span>
+           </div>
+           <div class="col-md-4">
+            <span>Selected : {name : {{uiCtrl.selectedArea.name}}, id : {{uiCtrl.selectedArea.id}}}
+            </span>
+           </div>
+           <div class="col-md-4">
+            <span>Selected : {name : {{uiCtrl.selectedLocality}}}</span>
+            </span>
+           </div>
+        </div>    
+</div>

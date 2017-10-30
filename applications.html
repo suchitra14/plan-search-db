@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MainModule">
+  <head>
+    <meta charset="utf-8">
+    <title>Search Page Module</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/flat-ui.min.css">
+    <link rel="stylesheet" href="css/select.css">
+
+
+    <!-- Using only with Flat-UI (free)-->
+            <link rel="stylesheet" href="css/icon-font.min.css">
+        <!-- end -->  
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../flat-ui/js/html5shiv.js"></script>
+    <![endif]-->
+
+<!--        <style type="text/css">
+                #map {
+                    height: 500px;
+                    width: 800px;
+                }
+        </style>
+        -->
+
+        <style>
+            body {
+              padding: 15px;
+            }
+
+            .select2 > .select2-choice.ui-select-match {
+              /* Because of the inclusion of Bootstrap */
+              height: 29px;
+            }
+
+            .selectize-control > .selectize-dropdown {
+              top: 36px;
+            }
+
+        </style>
+
+
+
+  </head>
+
+  <body ng-controller="MainController">
+
+        <header class="header-11">
+            <div class="container">
+                <div class="navbar span12">
+                    <div class="navbar-inner">
+                        <button type="button" class="btn btn-navbar"> </button>
+                        <a class="brand" href="#"><img src="assets/images/logo.png" width="170" height="50" alt=""> </a>
+                        <div class="nav-collapse collapse pull-right">
+                            <ul class="nav">
+                                <li class="active"><a href="#">HOME</a></li>
+                                <li><a href="#">COMPANY</a></li>
+                                <li><a href="#">PORTFOLIO</a></li>
+                                <li><a href="#">BLOG</a></li>
+                                <li><a href="#">CONTACT</a></li>
+                            </ul>
+                            <form class="navbar-form pull-left">
+                                <a class="btn btn-primary" href="#">SIGN IN</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    <section class="price-1" >
+        <google-maps-box></google-maps-box> 
+    </section>
+
+
+    <!--section class="price-1" >
+      <google-maps-box></google-maps-box>
+      
+
+
+            <div class="col-xs-4"></div>
+        </div>
+
+
+
+    </section-->
+
+        <!--section class="content-13 subscribe-form bg-turquoise">
+            <div class="container">
+                <div class="row">
+                    <form>
+                        <div class="span8">
+                            <input type="text" placeholder="Enter your e-mail" spellcheck="false">
+                        </div>
+                        <div class="span4">
+                            <button class="btn btn-large btn-primary" type="submit">
+                                Subscribe now
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section-->
+
+
+        <!--footer class="footer-2 bg-midnight-blue">
+            <div class="container">
+                <nav class="pull-left">
+                    <ul>
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Company</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="social-btns pull-right">
+                    <a href="#"><div class="fui-vimeo"> </div><div class="fui-vimeo"> </div></a>
+                    <a href="#"><div class="fui-facebook"> </div><div class="fui-facebook"> </div></a>
+                    <a href="#"><div class="fui-twitter"> </div><div class="fui-twitter"> </div></a>
+                </div>
+                <div class="additional-links">
+                    Be sure to take a look at our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </footer-->
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--[if lt IE 8]>
+      <script src="../../flat-ui/js/icon-font-ie7.js"></script>
+    <![endif]-->
+    <script src="js/startup-kit.min.js"></script>
+    <script src="js/angular.min.js"></script>    
+    <script src="js/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0KSivqHZuyBaDVS1-dkAPgnITEPUJ0ZE&libraries=places"></script>
+    <script src="js/ng-map.min.js"></script>
+    <script src="js/select.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/area_map.js"></script>
+    <script src="js/ui-select.js"></script>
+  </body>
+</html>
+
+

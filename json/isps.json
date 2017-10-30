@@ -1,0 +1,53 @@
+[
+  {
+  	"code" : "AIR",
+  	"areas" : "Viman Nagar",
+  	"name" : "Airtel",
+  	"avgRating" : 3.5,
+    "roundedRating" : 3.5,
+  	"maxSpeed" : "100MBps",
+  	"priceStarts" : "Rs 799/pm",
+  	"url" :"images/airtel.jpeg",
+  	"summary" : "Airtel is one of the leading internet providers in Pune with Viman Nagar as its prime location.",
+    "banner" :"images/airtel_banner.jpeg"
+  },
+   {
+  	"code" : "JIO",
+  	"areas" : "Viman Nagar, Hadapsar",
+  	"name" : "Reliance Jio",
+  	"avgRating" : 3.9,
+    "roundedRating" : 4,
+    "maxSpeed" : "200MBps",
+  	"priceStarts" : "Rs 999/pm",
+  	"url" :"images/jio.jpeg",
+  	"summary" : "JIO is one of the leading internet providers in Pune with centers at multiple locations in Pune.",
+    "banner" :"images/jio_banner.jpeg"
+  },
+  {
+  	"code" : "YOU",
+  	"areas" : "Viman Nagar, Hadapsar, Magarpatta",
+  	"name" : "YOU Broadband",
+  	"avgRating" : 3.7,
+    "roundedRating" : 3.5,
+  	"maxSpeed" : "150MBps",
+  	"priceStarts" : "Rs 850/pm",
+  	"url" :"images/you.jpeg",
+  	"summary" : "You Broadband is one of the leading internet providers in Pune with centers at multiple locations in Pune.",
+    "banner" :"images/you_banner.jpeg"
+  },
+  {
+  	"code" : "VOD",
+  	"areas" : "Hadapsar",
+  	"name" : "Vodafone",
+  	"avgRating" : 2.8,
+    "roundedRating" : 3,
+  	"maxSpeed" : "200MBps",
+  	"priceStarts" : "Rs 900/pm",
+  	"url" :"images/vodafone.jpeg",
+  	"summary" : "Vodafone is one of the leading internet providers in Pune with centers at multiple locations in Pune.",
+    "banner" :"images/vodafone_banner.jpeg"
+  }
+
+
+
+]
